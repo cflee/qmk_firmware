@@ -145,7 +145,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #ifdef AUDIO_ENABLE
-  float game1_song[][2] = SONG(Q__NOTE(_B5), Q__NOTE(_D6), Q__NOTE(_G6), Q__NOTE(_B6));
+  float game1_song_on[][2] = SONG(Q__NOTE(_B5), Q__NOTE(_D6), Q__NOTE(_G6), Q__NOTE(_B6));
+  float game1_song_off[][2] = SONG(Q__NOTE(_B6), Q__NOTE(_G6), Q__NOTE(_D6), Q__NOTE(_B5));
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -172,10 +173,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case T_GAME1:
       if (record->event.pressed) {
-        #ifdef AUDIO_ENABLE
-          PLAY_SONG(game1_song);
-        #endif
-        layer_invert(_GAME1);
+        if (IS_LAYER_ON(_GAME1)) {
+          #ifdef AUDIO_ENABLE
+            PLAY_SONG(game1_song_off);
+          #endif
+          layer_off(_GAME1);
+        } else {
+          #ifdef AUDIO_ENABLE
+            PLAY_SONG(game1_song_on);
+          #endif
+          layer_on(_GAME1);
+        }
       }
       return false;
       break;
