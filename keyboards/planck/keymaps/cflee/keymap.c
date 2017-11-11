@@ -1,6 +1,8 @@
 #include "planck.h"
 #include "action_layer.h"
 
+// make planck/rev4:cflee:dfu
+
 extern keymap_config_t keymap_config;
 
 enum planck_layers {
