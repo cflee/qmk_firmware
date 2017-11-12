@@ -21,8 +21,15 @@ enum planck_keycodes {
   GAME1_L
 };
 
+// 1Password shortcuts
 #define CMD_1P LGUI(KC_BSLASH)
 #define CMD_1PO LGUI(LALT(KC_BSLASH))
+// macOS screenshot shortcuts
+#define C_SS LGUI(LSFT(KC_3))
+#define C_SSA LGUI(LSFT(KC_4))
+#define C_SSC LGUI(LCTL(LSFT(KC_3)))
+#define C_SSAC LGUI(LCTL(LSFT(KC_4)))
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -130,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |      | Reset| Debug|Aud on|Audoff|AGnorm|AGswap|GAME1 |      |      |      |  Del |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |Cmd-BS|CmdSBS|      |      |      |
+ * |      |    SS|   SSA| SS Cp|SSA Cp|      |      |Cmd-BS|CmdSBS|      |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -139,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = {
   {_______, RESET,   DEBUG,   AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, T_GAME1, _______, _______, _______, KC_DEL },
-  {_______, _______, _______, _______, _______, _______, _______,  CMD_1P, CMD_1PO, _______, _______, _______},
+  {_______, C_SS,    C_SSA,   C_SSC,   C_SSAC,  _______, _______,  CMD_1P, CMD_1PO, _______, _______, _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
 }
