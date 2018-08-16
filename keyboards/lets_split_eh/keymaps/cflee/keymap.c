@@ -23,7 +23,10 @@ enum layers {
 
 enum custom_keycodes {
   LOWER = SAFE_RANGE,
-  RAISE
+  RAISE,
+  RGB1,
+  RGB2,
+  RGB3
 };
 
 // Fillers to make layering more clear
@@ -122,9 +125,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Retain the bottom right reset for compatibility with default lets_split_eh keymap.
  */
 [_ADJUST] = LAYOUT( \
-  _______, RESET,   _______, _______, _______, _______, _______,   SDV_T, RGB_VAI, RGB_SAI, RGB_HUI, KC_DEL,  \
-  _______, C_SS,    C_SSA,   C_SSC,   C_SSAC,  _______, _______,  OVCK_T, RGB_VAD, RGB_SAD, RGB_HUD, RGB_TOG, \
-  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, BL_STEP, \
+  _______, RESET,   DEBUG,   _______, _______, _______, _______, SDV_T,   RGB_VAI, RGB_SAI, RGB_HUI, KC_DEL,  \
+  _______, C_SS,    C_SSA,   C_SSC,   C_SSAC,  _______, _______, OVCK_T,  RGB_VAD, RGB_SAD, RGB_HUD, RGB_TOG, \
+  _______, _______, _______, _______, _______, _______, _______, RGB1,    RGB2,    RGB3,    _______, BL_STEP, \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RESET    \
 ),
 

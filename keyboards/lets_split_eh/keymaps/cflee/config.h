@@ -8,4 +8,6 @@
 // Since we do want Cmd-Esc to send Cmd-`, override this behaviour for ALT/Opt.
 #define GRAVE_ESC_ALT_OVERRIDE
 
+#define RGBLIGHT_ANIMATIONS
+
 #endif
