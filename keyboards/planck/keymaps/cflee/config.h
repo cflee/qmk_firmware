@@ -3,6 +3,11 @@
 
 #include "../../config.h"
 
+// Usually KC_GESC sends ` on with GUI/Cmd, making it impossible to send Cmd-Opt-Esc.
+// We can force it to send Esc when some modifier(s) are active.
+// Since we do want Cmd-Esc to send Cmd-`, override this behaviour for ALT/Opt.
+#define GRAVE_ESC_ALT_OVERRIDE
+
 #ifdef AUDIO_ENABLE
     #define STARTUP_SONG SONG(PLANCK_SOUND)
     // #define STARTUP_SONG SONG(NO_SOUND)
@@ -25,7 +30,7 @@
 /* enable basic MIDI features:
    - MIDI notes can be sent when in Music mode is on
 */
-                                
+
 #define MIDI_BASIC
 
 /* enable advanced MIDI features:
@@ -38,5 +43,14 @@
 
 /* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
 //#define MIDI_TONE_KEYCODE_OCTAVES 2
+
+// reduce size
+// #undef LOCKING_SUPPORT_ENABLE
+// #undef LOCKING_RESYNC_ENABLE
+// #define NO_DEBUG
+// #define NO_PRINT
+// #define NO_ACTION_ONESHOT
+// #define NO_ACTION_MACRO
+// #define NO_ACTION_FUNCTION
 
 #endif
