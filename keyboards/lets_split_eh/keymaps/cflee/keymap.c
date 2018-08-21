@@ -101,14 +101,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
  * |Enter |   7  |   8  |   9  |   -  |  F11 |  |  F12 |      | Home | PgDn | PgUp | End  |
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
- * |      |   ,  |   0  |  .   |      | Bksp |  | Bksp |      | Next | Vol- | Vol+ | Play |
+ * |      |      |      |      |      | Bksp |  | Bksp |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------'  `-----------------------------------------'
  */
 [_RAISE] = LAYOUT( \
-  KC_GRV,  KC_1,    KC_2,  KC_3,   KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,  \
-  _______, KC_4,    KC_5,  KC_6,   KC_PLUS, KC_F5,   KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS, \
-  KC_ENT,  KC_7,    KC_8,  KC_9,   KC_MINS, KC_F11,  KC_F12,  _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  \
-  _______, KC_COMM, KC_0,  KC_DOT, _______, KC_BSPC, KC_BSPC, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY  \
+  KC_GRV,  KC_1,    KC_2,     KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,  \
+  _______, KC_4,    KC_5,     KC_6,    KC_PLUS, KC_F5,   KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS, \
+  KC_ENT,  KC_7,    KC_8,     KC_9,    KC_MINS, KC_F11,  KC_F12,  _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  \
+  _______, _______, _______,  _______, _______, KC_BSPC, KC_BSPC, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY  \
 ),
 
 /* Adjust (Lower + Raise)
